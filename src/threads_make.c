@@ -28,20 +28,6 @@ void	*philo_day(void *philo_data)
 	return (philo_data);
 }
 
-// int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg);
-
-// A pointer to a pthread_t variable where the function will store the ID of the newly created thread.
-
-// *const pthread_attr_t attr:
-// A pointer to a pthread_attr_t structure that specifies the attributes of the new thread. If this parameter is NULL, the thread is created with default attributes.
-
-// void *(*start_routine) (void *):
-// A pointer to the function that the thread will execute. This function must have the following signature:
-// void *start_routine(void *arg);
-
-// *void arg:
-// A pointer to the argument that will be passed to the start_routine function. This can be NULL if no argument is needed.
-
 // int pthread_join(pthread_t thread, void **retval);
 // 1) The identifier of the thread to be joined
 // 2)A pointer to a pointer where the exit status of the joined thread will be stored. This allows the thread that called pthread_join to obtain the return value of the terminated thread.
@@ -94,11 +80,3 @@ int make_threads_then_join(t_control *control, pthread_mutex_t *forks)
 //  Without joining, resources might remain allocated, leading to memory leaks.
 
 // pthread_join ensures that the main thread waits until each thread has fully completed its execution.
-
-
-// When the simulation finishes (for example, when a philosopher dies or the maximum number of meals is reached),
-//  the threads may still be in the process of wrapping up their tasks?
-
-// Correct Flow: Create all threads → Run the simulation → End the simulation → Join all threads.
-
-// Post-Simulation Tasks: Threads may still have tasks to complete (e.g., exiting loops, performing cleanup) after the simulation ends.
