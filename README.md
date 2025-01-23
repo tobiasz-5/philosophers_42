@@ -6,5 +6,5 @@ Deadlock Avoidance: Implements strategies to prevent circular dependencies.<br/>
 Data Race Prevention: Protects shared variables with mutex locks for consistent state management.<br/>
 Efficiency: Optimized for minimal overhead in managing shared resources.<br/>
 
-Run:
-./philosophers <philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number of meals(optional)]
+Run:<br/>
+./philo <philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number of meals(optional)]
